@@ -1,54 +1,69 @@
+'use strict';
+
 import fs from 'fs';
 import https from 'https';
+import getAuthor from './lib/getAuthor';
+import getLastPageNumber from './lib/getLastPageNumber';
 import template from 'lodash.template';
 import xml from 'pixl-xml';
 
-let rfc = 2616;
+const FAILURE = 1;
+
+if (!process.argv[2]) {
+    console.error('Please provide an RFC number as an argument.');
+    process.exit(FAILURE);
+}
+
+let rfc = process.argv[2];
 let iri = `https://www.rfc-editor.org/refs/bibxml/reference.RFC.${rfc}.xml`;
 
 https.get(iri, (res) => {
-    //console.log(`Got response: ${res.statusCode}`);
+    if (res.statusCode !== 200) {
+        console.error(`Failed, got response code: ${res.statusCode}`);
+        process.exit(FAILURE);
+    }
+
     let body = '';
 
     res.on('data', chunk => {
         body += chunk;
     }).on('end', () => {
-        let bibXml = xml.parse(body);
-        let json = JSON.stringify(bibXml, null, 4);
-        console.log(body);
-        console.log(json);
-
-        let author = bibXml.front.author.map(author => author.fullname).join(' and ');
-        let rfc = bibXml.seriesInfo[0].value;
-        let month = bibXml.front.date.month;
-        let title = bibXml.front.title;
-        let year = bibXml.front.date.year;
+        let bibXml      = xml.parse(body);
+        let author      = getAuthor(bibXml.front.author);
+        let rfc         = bibXml.seriesInfo[0].value;
+        let month       = bibXml.front.date.month;
+        let title       = bibXml.front.title;
+        let year        = bibXml.front.date.year;
         let bibTemplate = fs.readFileSync('src/rfc-template.bib');
-        //console.log(rfc);
-        
-        let re = /\[Page\ (\d+)\]/g;
-        let iri = `https://www.rfc-editor.org/rfc/rfc${rfc}.txt`;
-        
+        let iri         = `https://www.rfc-editor.org/rfc/rfc${rfc}.txt`;
+
         https.get(iri, res => {
+            if (res.statusCode !== 200) {
+                console.error(`Failed, got response code: ${res.statusCode}`);
+                process.exit(FAILURE);
+            }
+
             let body = '';
 
             res.on('data', chunk => {
                 body += chunk;
             }).on('end', () => {
-                //console.log(body)
-                //console.log(JSON.stringify(body.match(re), null, 4));
-                let pages = body.match(re);
-                let lastPage = pages[pages.length - 1];
-                console.log(lastPage);
-                let num = lastPage.replace('[Page ', '').replace(']', '');
-                console.log(parseInt(num, 10));
-            });
-        }).on('error', err => {
-            console.log(`Got error: ${err.message}`);
-        })
+                let lastPage = getLastPageNumber(body);
+                let context  = {
+                    author: author,
+                    rfc:    rfc,
+                    month:  month,
+                    title:  title,
+                    year:   year,
+                    pages:  lastPage
+                };
 
-        console.log(template(bibTemplate)({author: author, rfc: rfc, month: month, title: title, year: year}));
+                console.log(template(bibTemplate)(context));
+            });
+        }).on('error', (e) => {
+            console.error(`Got error: ${e.message}`);
+        });
     });
-}).on('error', function(e) {
-    console.log(`Got error: ${e.message}`);
+}).on('error', (e) => {
+    console.error(`Got error: ${e.message}`);
 });
