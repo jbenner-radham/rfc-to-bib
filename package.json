@@ -4,9 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "James Benner <james.benner@gmail.com>",
+  "bin": {
+    "rfc-to-bib": "cli.js"
+  },
+  "engines": {
+    "node": ">=4",
+    "iojs": "*"
+  },
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.1.21",
@@ -14,5 +21,8 @@
     "lodash.template": "^3.6.2",
     "pixl-xml": "^1.0.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
 }
