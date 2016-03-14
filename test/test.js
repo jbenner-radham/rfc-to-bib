@@ -3,7 +3,7 @@
 let expect = require('chai').expect;
 
 describe('getAuthorName', () => {
-    let getAuthorName = require('../src/lib/getAuthor');
+    let getAuthorName = require('../src/lib/get-author-name');
 
     it('should return a string from of an array of authors', () => {
         let authors = [

@@ -15,8 +15,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "babel-core": "^6.1.21",
-    "babel-preset-es2015": "^6.1.18",
     "lodash.template": "^3.6.2",
     "pixl-xml": "^1.0.4"
   },

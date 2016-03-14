@@ -1,11 +1,11 @@
 'use strict';
 
-import fs from 'fs';
-import https from 'https';
-import getAuthor from './lib/getAuthor';
-import getLastPageNumber from './lib/getLastPageNumber';
-import template from 'lodash.template';
-import xml from 'pixl-xml';
+let fs                = require('fs');
+let getAuthorName     = require('./lib/get-author-name');
+let getLastPageNumber = require('./lib/get-last-page-number');
+let https             = require('https');
+let template          = require('lodash.template');
+let xml               = require('pixl-xml');
 
 const FAILURE = 1;
 
@@ -29,7 +29,7 @@ https.get(iri, (res) => {
         body += chunk;
     }).on('end', () => {
         let bibXml      = xml.parse(body);
-        let author      = getAuthor(bibXml.front.author);
+        let author      = getAuthorName(bibXml.front.author);
         let rfc         = bibXml.seriesInfo[0].value;
         let month       = bibXml.front.date.month;
         let title       = bibXml.front.title;
