@@ -15,4 +15,11 @@ describe('getAuthorName', () => {
 
         expect(getAuthorName(authors)).to.equal(control);
     });
+
+    it('should return a string from of an author object', () => {
+        let author  = {fullname: 'J. Benner', initials: 'J.', organization: '', surname: 'Benner'};
+        let control = 'J. Benner';
+
+        expect(getAuthorName(author)).to.equal(control);
+    });
 });
