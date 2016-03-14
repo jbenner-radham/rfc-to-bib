@@ -9,7 +9,7 @@ A CLI tool to generate BibTeX records of IETF RFCs.
 Install
 -------
 ```sh
-$ npm install rfc-to-bib
+$ npm install -g rfc-to-bib
 ```
 
 Usage
