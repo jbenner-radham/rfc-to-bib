@@ -5,7 +5,7 @@
   "main": "cli.js",
   "scripts": {
     "lint": "eslint {src,test}/*.js",
-    "test": "mocha"
+    "test": "npm run-script lint && mocha"
   },
   "author": "James Benner <james.benner@gmail.com>",
   "bin": {
