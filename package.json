@@ -4,6 +4,7 @@
   "description": "A CLI tool to generate BibTeX records of IETF RFCs.",
   "main": "cli.js",
   "scripts": {
+    "lint": "eslint {src,test}/*.js",
     "test": "mocha"
   },
   "author": "James Benner <james.benner@gmail.com>",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "eslint": "^3.19.0",
     "mocha": "^2.4.5"
   },
   "repository": {

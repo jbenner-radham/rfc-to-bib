@@ -1,6 +1,5 @@
 'use strict';
 
-let fs                = require('fs');
 let getAuthorName     = require('./lib/get-author-name');
 let getLastPageNumber = require('./lib/get-last-page-number');
 let https             = require('https');
