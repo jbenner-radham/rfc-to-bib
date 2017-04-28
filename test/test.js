@@ -3,8 +3,8 @@
 let expect = require('chai').expect;
 
 describe('getAuthorName', () => {
-    let getAuthorName     = require('../src/lib/get-author-name');
-    let getLastPageNumber = require('../src/lib/get-last-page-number');
+    let getAuthorName     = require('../lib/get-author-name');
+    let getLastPageNumber = require('../lib/get-last-page-number');
 
     it('should return a string from of an array of authors', () => {
         let authors = [
