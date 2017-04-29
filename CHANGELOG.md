@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated npm dependencies.
 - Changed over from `npm-shrinkwrap.json` to `yarn.lock` for the project lock file.
 - Updated the `CHANGELOG.md` to [Keep a Changelog](http://keepachangelog.com/) v3 format.
+- Enhanced CLI error handling.
 
 [0.1.3] - 2017-04-27
 --------------------
