@@ -4,7 +4,7 @@ rfc-to-bib
 [![GitHub License][LICENSE BADGE]][LICENSE PAGE]
 [![Build Status][BUILD BADGE]][BUILD PAGE]
 
-A CLI tool to generate BibTeX records of IETF RFCs.
+A CLI tool to generate [BibTeX](http://www.bibtex.org/) records of IETF RFCs.
 
 Install
 -------
@@ -15,7 +15,20 @@ $ npm install -g rfc-to-bib
 Usage
 -----
 ```sh
-$ rfc-to-bib 2616 > rfc2616.bib
+$ rfc-to-bib --help
+
+  A CLI tool to generate BibTeX records of IETF RFCs.
+
+  Usage
+      $ rfc-to-bib <rfc>
+
+  Options
+      --help, -h
+      --version, -v
+
+  Examples
+      $ rfc-to-bib 2616
+      $ rfc-to-bib 2616 > rfc2616.bib
 ```
 
 Testing
