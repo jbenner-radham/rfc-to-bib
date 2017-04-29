@@ -16,8 +16,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "lodash.template": "^3.6.2",
-    "pixl-xml": "^1.0.4"
+    "lodash.template": "^4.4.0",
+    "pixl-xml": "^1.0.10"
   },
   "devDependencies": {
     "chai": "^3.5.0",
