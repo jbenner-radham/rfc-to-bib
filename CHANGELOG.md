@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Can be used as a library as well as a CLI tool now.
 - Added ESLint linting.
+- Added CLI flags for `--help` and `--version`.
 
 ### Changed
 - Architectural refactor.
@@ -17,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed over from `npm-shrinkwrap.json` to `yarn.lock` for the project lock file.
 - Updated the `CHANGELOG.md` to [Keep a Changelog](http://keepachangelog.com/) v3 format.
 - Enhanced CLI error handling.
+- Invoking the CLI app without an argument now displays the "help" message.
 
 [0.1.3] - 2017-04-27
 --------------------
