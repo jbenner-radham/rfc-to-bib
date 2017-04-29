@@ -7,6 +7,13 @@
     "lint": "eslint {lib,test}/*.js",
     "test": "npm run-script lint && mocha"
   },
+  "keywords": [
+    "IETF",
+    "Bib",
+    "CLI",
+    "BibTeX",
+    "RFC"
+  ],
   "author": "James Benner <james.benner@gmail.com>",
   "bin": {
     "rfc-to-bib": "cli.js"
