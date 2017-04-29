@@ -12,4 +12,9 @@ if (!process.argv[2]) {
 
 let rfc = process.argv[2];
 
-rfcToBib(rfc);
+rfcToBib(rfc).then(bib => {
+    console.log(bib);
+}).catch(error => {
+    console.error(error.message);
+    process.exit(EXIT_FAILURE);
+});
