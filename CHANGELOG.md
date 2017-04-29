@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[Unreleased]
+------------
+### Added
+- Can be used as a library as well as a CLI tool now.
+- Added ESLint linting.
+
+### Changed
+- Architectural refactor.
+- Updated npm dependencies.
+- Changed over from `npm-shrinkwrap.json` to `yarn.lock` for the project lock file.
+- Updated the `CHANGELOG.md` to [Keep a Changelog](http://keepachangelog.com/) v3 format.
+
 [0.1.3] - 2017-04-27
 --------------------
 ### Changed
@@ -29,6 +41,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial release.
 
+[Unreleased]: https://github.com/jbenner-radham/rfc-to-bib/compare/0.1.3...HEAD
 [0.1.3]: https://github.com/jbenner-radham/rfc-to-bib/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/jbenner-radham/rfc-to-bib/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/jbenner-radham/rfc-to-bib/compare/0.1.0...0.1.1
