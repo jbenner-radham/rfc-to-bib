@@ -2,7 +2,7 @@
   "name": "rfc-to-bib",
   "version": "0.1.3",
   "description": "A CLI tool to generate BibTeX records of IETF RFCs.",
-  "main": "cli.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint {lib,test}/*.js",
     "test": "npm run-script lint && mocha"
