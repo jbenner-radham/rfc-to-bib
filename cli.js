@@ -2,19 +2,21 @@
 'use strict';
 
 const rfcToBib = require('./lib');
+const logError = require('./lib/log-error');
 
 const EXIT_FAILURE = 1;
+const RADIX = 10;
 
-if (!process.argv[2]) {
-    console.error('Please provide an RFC number as an argument.');
+let rfc = Number.parseInt(process.argv[2], RADIX);
+
+if (Number.isNaN(rfc)) {
+    logError('Please provide an RFC number as an argument.');
     process.exit(EXIT_FAILURE);
 }
-
-let rfc = process.argv[2];
 
 rfcToBib(rfc).then(bib => {
     console.log(bib);
 }).catch(error => {
-    console.error(error.message);
+    logError(error.message);
     process.exit(EXIT_FAILURE);
 });
