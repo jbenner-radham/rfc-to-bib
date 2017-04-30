@@ -12,6 +12,10 @@ insert_final_newline = true
 max_line_length = 120
 trim_trailing_whitespace = true
 
+# Ensure test fixtures don't get newlines added to them and break tests.
+[*.bib]
+insert_final_newline = false
+
 [*.md]
 trim_trailing_whitespace = false
 
