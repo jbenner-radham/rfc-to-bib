@@ -1,0 +1,42 @@
+.Dd April 30, 2017
+.Dt RFC-TO-BIB 3 PRM
+.Os rfc-to-bib 0.2.0
+.\" @link <http://manpages.bsd.lv/mdoc.html>
+.\"
+.Sh NAME
+.\" ====
+.Nm rfc-to-bib
+.Nd library to generate IETF RFC BibTeX records
+.\"
+.Sh SYNOPSIS
+.\" ========
+.Ft Promise
+.Fn rfcToBib "rfc"
+.\"
+.Sh DESCRIPTION
+.\" ===========
+A library and CLI tool to generate BibTeX records for IETF RFCs.
+.\"
+.Sh RETURN VALUES
+.\" =============
+Returns a
+.Vt Promise
+upon completion.
+.\"
+.Sh EXAMPLES
+.\" ========
+.Bd -literal -offset indent -compact
+const rfcToBib = require('rfc-to-bib');
+
+let rfc = 2616;
+
+rfcToBib(rfc).then(bib => {
+    console.log(bib);
+}).catch(error => {
+    console.error(error.message);
+});
+.Ed
+.\"
+.Sh AUTHORS
+.\" =======
+.An James Benner Aq Mt james.benner@gmail.com

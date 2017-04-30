@@ -4,16 +4,25 @@ rfc-to-bib
 [![GitHub License][LICENSE BADGE]][LICENSE PAGE]
 [![Build Status][BUILD BADGE]][BUILD PAGE]
 
-A CLI tool to generate [BibTeX](http://www.bibtex.org/) records of IETF RFCs.
+A library and CLI tool to generate [BibTeX](http://www.bibtex.org/) records for [IETF](https://www.ietf.org/) RFCs.
 
 Install
 -------
+
+### CLI
 ```sh
 $ npm install -g rfc-to-bib
 ```
 
+### API
+```sh
+$ npm install --save rfc-to-bib
+```
+
 Usage
 -----
+
+### CLI
 ```sh
 $ rfc-to-bib --help
 
@@ -29,6 +38,19 @@ $ rfc-to-bib --help
   Examples
       $ rfc-to-bib 2616
       $ rfc-to-bib 2616 > rfc2616.bib
+```
+
+### API
+```js
+const rfcToBib = require('rfc-to-bib');
+
+let rfc = 2616;
+
+rfcToBib(rfc).then(bib => {
+    console.log(bib);
+}).catch(error => {
+    console.error(error.message);
+});
 ```
 
 Testing

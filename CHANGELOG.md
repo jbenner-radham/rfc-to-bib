@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added ESLint linting.
 - Added CLI flags for `--help` and `--version`.
 - Expanded code coverage.
+- Added UNIX manpages.
 
 ### Changed
 - Architectural refactor.
