@@ -19,7 +19,7 @@
     "rfc-to-bib": "cli.js"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "license": "MIT",
   "dependencies": {
