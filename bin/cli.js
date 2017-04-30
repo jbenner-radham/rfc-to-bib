@@ -15,8 +15,8 @@ const cli = meow(`
         $ rfc-to-bib <rfc>
 
     Options
-        --help, -h
-        --version, -v
+        -h, --help       Display this screen.
+        -v, --version    Display the software version.
 
     Examples
         $ rfc-to-bib 2616
