@@ -11,12 +11,12 @@ Install
 
 ### CLI
 ```sh
-$ npm install -g rfc-to-bib
+$ npm install --global rfc-to-bib # Or alternately: `yarn global add rfc-to-bib`
 ```
 
 ### API
 ```sh
-$ npm install --save rfc-to-bib
+$ npm install --save rfc-to-bib # Or alternately: `yarn add rfc-to-bib`
 ```
 
 Usage
@@ -56,7 +56,7 @@ rfcToBib(rfc).then(bib => {
 Testing
 -------
 ```sh
-$ npm test
+$ npm test # Or alternately: `yarn test`
 ```
 
 License
