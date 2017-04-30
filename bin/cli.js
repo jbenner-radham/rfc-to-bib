@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 
-const rfcToBib = require('./lib');
-const logError = require('./lib/log-error');
+const rfcToBib = require('../lib');
+const logError = require('../lib/log-error');
 const meow = require('meow');
 
 const EXIT_FAILURE = 1;
