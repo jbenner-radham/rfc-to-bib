@@ -4,11 +4,12 @@
   "description": "A library and CLI tool to generate BibTeX records for IETF RFCs.",
   "main": "lib/index.js",
   "man": [
+    "man/man1/rfc-to-bib.1",
     "man/man3/rfc-to-bib.3"
   ],
   "scripts": {
     "lint": "eslint {lib,test}/*.js",
-    "manpages": "mandoc -T lint man/man3/rfc-to-bib.3",
+    "manpages": "mandoc -T lint man/man1/rfc-to-bib.1 man/man3/rfc-to-bib.3",
     "test": "npm run-script lint && mocha"
   },
   "keywords": [

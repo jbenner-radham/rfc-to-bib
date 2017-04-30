@@ -1,40 +1,33 @@
 .Dd April 30, 2017
-.Dt RFC-TO-BIB 3
+.Dt RFC-TO-BIB 1
 .Os rfc-to-bib 0.2.0
 .\" @link <http://manpages.bsd.lv/mdoc.html>
 .\"
 .Sh NAME
 .\" ====
 .Nm rfc-to-bib
-.Nd library to generate IETF RFC BibTeX records
+.Nd generate IETF RFC BibTeX records
 .\"
 .Sh SYNOPSIS
 .\" ========
-.Ft Promise
-.Fn rfcToBib "rfc"
+.Nm
 .\"
 .Sh DESCRIPTION
 .\" ===========
 A library and CLI tool to generate BibTeX records for IETF RFCs.
 .\"
-.Sh RETURN VALUES
-.\" =============
-Returns a
-.Vt Promise
-upon completion.
+.Sh EXIT STATUS
+.\" ===========
+.Ex -std
 .\"
 .Sh EXAMPLES
 .\" ========
+The following examples are shown as given to the shell:
+.Pp
 .Bd -literal -offset indent -compact
-const rfcToBib = require('rfc-to-bib');
+rfc-to-bib 2616 # Print BibTeX to stdout.
 
-let rfc = 2616;
-
-rfcToBib(rfc).then(bib => {
-    console.log(bib);
-}).catch(error => {
-    console.error(error.message);
-});
+rfc-to-bib 2616 > rfc2616.bib # Write BibTeX to file.
 .Ed
 .\"
 .Sh AUTHORS
