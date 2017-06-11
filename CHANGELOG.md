@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Added descriptions for flags in the CLI "help" output.
 - Increased test timeout to 60 seconds.
+- Updated npm dependencies.
 
 ### Fixed
 - Fix for incorrect RFC number being reported in BibTeX for some RFCs.
