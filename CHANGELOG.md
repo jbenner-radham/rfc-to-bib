@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added descriptions for flags in the CLI "help" output.
 - Increased test timeout to 60 seconds.
 
+### Fixed
+- Fix for incorrect RFC number being reported in BibTeX for some RFCs.
+
 [0.2.0] - 2017-04-30
 --------------------
 ### Added
