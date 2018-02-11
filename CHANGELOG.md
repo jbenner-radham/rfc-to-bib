@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Fix for RFC numbers which are less than 4-digits long returning a 404 error. _([Issue #3](https://github.com/jbenner-radham/rfc-to-bib/issues/3))_
 - Fix for earlier RFCs which displayed their pages as "[page %d]" instead of "[Page %d]".
+- Fix for RFC titles which have unescaped octothorpes. _([Issue #4](https://github.com/jbenner-radham/rfc-to-bib/issues/4))_
 
 [0.2.1] - 2017-06-11
 --------------------

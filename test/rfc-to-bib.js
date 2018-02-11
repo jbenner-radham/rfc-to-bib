@@ -15,11 +15,13 @@ describe('rfc-to-bib', function () {
     beforeEach(function () {
         let rfc768Fixture = path.join(__dirname, 'fixtures/rfc768.bib');
         let rfc2616Fixture = path.join(__dirname, 'fixtures/rfc2616.bib');
+        let rfc2898Fixture = path.join(__dirname, 'fixtures/rfc2898.bib');
         let rfc3986Fixture = path.join(__dirname, 'fixtures/rfc3986.bib');
 
         this.fixtures = {
             rfc768: fs.readFileSync(rfc768Fixture, {encoding: 'utf8'}),
             rfc2616: fs.readFileSync(rfc2616Fixture, {encoding: 'utf8'}),
+            rfc2898: fs.readFileSync(rfc2898Fixture, {encoding: 'utf8'}),
             rfc3986: fs.readFileSync(rfc3986Fixture, {encoding: 'utf8'})
         }
     });
@@ -46,6 +48,10 @@ describe('rfc-to-bib', function () {
 
     it('should return a BibTeX for RFC 2616', function (done) {
         expect(rfcToBib(2616)).to.eventually.equal(this.fixtures.rfc2616).and.notify(done);
+    });
+
+    it('should return a BibTeX for RFC 2898', function (done) {
+        expect(rfcToBib(2898)).to.eventually.equal(this.fixtures.rfc2898).and.notify(done);
     });
 
     it('should return a BibTeX for RFC 3986', function (done) {
