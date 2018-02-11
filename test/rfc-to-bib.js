@@ -10,7 +10,7 @@ const path = require('path');
 chai.use(chaiAsPromised);
 
 describe('rfc-to-bib', function () {
-    this.timeout(60000);
+    this.timeout(99999);
 
     beforeEach(function () {
         let rfc768Fixture = path.join(__dirname, 'fixtures/rfc768.bib');
