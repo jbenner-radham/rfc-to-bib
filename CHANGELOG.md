@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[Unreleased]
+------------
+### Fixed
+- Fix for RFC numbers which are less than 4-digits long returning a 404 error. _([Issue #3](https://github.com/jbenner-radham/rfc-to-bib/issues/3))_
+- Fix for earlier RFCs which displayed their pages as "[page %d]" instead of "[Page %d]".
+
 [0.2.1] - 2017-06-11
 --------------------
 ### Added
@@ -60,6 +66,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial release.
 
+[Unreleased]: https://github.com/jbenner-radham/rfc-to-bib/compare/0.2.1...HEAD
 [0.2.1]: https://github.com/jbenner-radham/rfc-to-bib/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/jbenner-radham/rfc-to-bib/compare/0.1.3...0.2.0
 [0.1.3]: https://github.com/jbenner-radham/rfc-to-bib/compare/0.1.2...0.1.3

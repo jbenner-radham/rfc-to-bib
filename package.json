@@ -34,7 +34,8 @@
     "got": "^6.7.1",
     "lodash.template": "^4.4.0",
     "meow": "^3.7.0",
-    "pixl-xml": "^1.0.10"
+    "pixl-xml": "^1.0.10",
+    "sprintf-js": "^1.1.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
